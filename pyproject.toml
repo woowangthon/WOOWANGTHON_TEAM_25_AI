@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "woowangthon-ai"
+version = "0.1.0"
+description = "Source-grounded payment guidance analysis and bounded suspicion scoring"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "openai>=2,<3",
+    "pydantic>=2,<3",
+]
+
+[project.optional-dependencies]
+test = ["httpx>=0.28,<1"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["woowang_ai*"]
+
+[tool.setuptools.package-data]
+woowang_ai = ["py.typed"]
